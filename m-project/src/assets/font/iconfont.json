@@ -1,0 +1,16 @@
+{
+  "id": "2032446",
+  "name": "m-project",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9606878",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    }
+  ]
+}
