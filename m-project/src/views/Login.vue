@@ -47,7 +47,7 @@
             </div>
             </van-form>
     </div>
-    <!-- 表单结束 -->
+    <!-- 表单结束结束 -->
     <div class="forgetPwd">
         忘记密码？
     </div>
