@@ -14,6 +14,7 @@ Vue.use(VueRouter)
     { path: '/order', component: () => import('../views/Order.vue') },
     { path: '/sign', component: () => import('../views/Sign.vue') },
     { path: '/list', component: () => import('../views/List.vue') },
+    { path: '/pay', component: () => import('../views/Pay.vue') },
 ]
 
 const router = new VueRouter({

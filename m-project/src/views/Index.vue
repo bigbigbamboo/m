@@ -346,7 +346,7 @@ export default {
     //goods开始
         .column{
             .titleTag{ display: flex; justify-content: space-around; align-items: center; padding: 0 px2rem(15);}
-             width: 100%; min-height: px2rem(100); background: white; overflow: hidden; margin-bottom: px2rem(15);
+             width: 100%; min-height: px2rem(100); background: white;  margin-bottom: px2rem(15);
             h2{ text-align: center; margin: px2rem(10) auto px2rem(10); font-size: px2rem(16);}
         }
         // .goodItem:nth-child(even){ border-right: none; }

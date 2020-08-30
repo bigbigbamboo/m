@@ -60,13 +60,39 @@ function postLogin (params) {
         params
       }).then(res => res.data)
 }
+/**
+ * 订单列表
+ * @param {Object} params { userid, token }
+ */
+ function orderList(params) {
+      return request({
+        url: 'order/index.jsp',
+        method: 'get',
+        params
+      }).then(res => res.data)
+}
 
- 
+/**
+ * 订单创建
+ * @param {Object} params { username: '', password: ''}
+ */
+function orderCreat (params) {
+  return request({
+    url: 'order/create.jsp',
+    method: 'post',
+    data: qs.stringify(params)
+  }).then(res => res.data)
+}
+
+
+
 
 export default {
     postMessage,
     postMobileSign,
     postUnameSign,
     postLogin,
-    getCode
+    getCode,
+    orderCreat,
+    orderList
 }
