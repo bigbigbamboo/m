@@ -1,7 +1,7 @@
 <template>
 <div class="had">
     <div class="head">
-            <p> <van-icon name="arrow-left" /> </p>
+            <p @click="change('/adress')"> <van-icon name="arrow-left" /> </p>
             <p>收货地址</p>
             <p> <van-icon name="coupon-o" /> </p>
     </div>
@@ -33,28 +33,31 @@ import { Toast } from 'vant';
 // adressList
 export default {
     mounted(){
-        this.initData()
+        
         this.del()
         this.default()
+        this.initData()
     },
     components:{
         Footer
     },
     methods:{
         default(){
-            let _this = this
+            // let _this = this
             document.querySelector('.main').addEventListener('click',function(e){
                  e = e || window.event 
                 var target = e.target || e.srcElement
-                console.log(target)
+                
                 let token = localStorage.getItem('token')
                 let address_id = target.getAttribute('address_id')
                 if(target.innerText === '设置默认'){
                     adressApi.mrAddress({token,address_id})
                     .then(res=>{
+                        console.log(res)
                         if(res.meta.state == 200){
                                 Toast.success(res.meta.msg)
-                                _this.initData()
+                                this.$router.push({path:'/cart'})
+                                
                         }else{
                             Toast.fail(res.meta.msg)
                         }
@@ -68,13 +71,13 @@ export default {
             document.querySelector('.main').addEventListener('click',function(e){
                  e = e || window.event 
                 var target = e.target || e.srcElement
-                console.log(target)
+                // console.log(target)
                 let token = localStorage.getItem('token')
                 let address_id = target.getAttribute('address_id')
                 if(target.innerText === '删除'){
                     adressApi.delAddress({token,address_id})
                     .then(res=>{
-                        console.log(res)
+                        // console.log(res)
                         if(res.meta.state == 200){
                                 Toast.success(res.meta.msg)
                                 _this.initData()
@@ -106,7 +109,7 @@ export default {
                         
                         <div class="switch">
                             <p address_id=${item.address_id}>删除</p>
-                            <p class="sw1" address_id=${item.address_id}>设置默认</p>
+                            <p class="sw1" address_id=${item.address_id} >设置默认</p>
                         </div>
                     </div>
 

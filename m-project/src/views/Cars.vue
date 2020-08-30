@@ -2,7 +2,7 @@
 <div class="cars">
     <!-- 顶部开始 -->
     <div class="head">
-            <p> <van-icon name="arrow-left" /> </p>
+            <p  @click="change('/had')"> <van-icon name="arrow-left" /> </p>
             <p>购物车</p>
             <p> <van-icon name="coupon-o" /> </p>
     </div>

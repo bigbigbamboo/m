@@ -14,13 +14,19 @@
             <iframe class="frame" src="" frameborder="0"></iframe>
         </a>
     </div>
-   
+   <div class="bottom">
+         <Footer></Footer>
+    </div>
 <!-- end -->  
 </div>
 </template>
 <script>
+import Footer from '@/components/Footer.vue'
 import {mapState} from 'vuex'
 export default {
+    components:{
+        Footer
+    },
     mounted(){
         this.zfbPay()
         this.wxPay()
@@ -54,6 +60,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+
 @import '@/assets/css/common.scss';
 
 .pay{ width: 100%; height: 100%; display: flex; flex-direction: column; }

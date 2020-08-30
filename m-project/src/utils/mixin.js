@@ -7,6 +7,7 @@ Vue.mixin({
         change(url) {
             if (this.$router.app.$route.path == url) return 
             this.$router.push({path: url})
+             
         }
     }
 })

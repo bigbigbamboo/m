@@ -2,9 +2,9 @@
 <div class="cars">
     <!-- 顶部开始 -->
     <div class="head">
-            <p> <van-icon name="arrow-left" /> </p>
+            <p @click="change('/')"> <van-icon name="arrow-left" /> </p>
             <p>设置收货地址</p>
-            <p> <van-icon name="coupon-o" /> </p>
+            <p @click="change('/had')"> <van-icon name="coupon-o" /> </p>
     </div>
    <div class="main">
             <div class="addressData">

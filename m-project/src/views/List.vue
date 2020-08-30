@@ -3,8 +3,10 @@
     <!-- 顶部开始 -->
     <div class="header">
         <div class="topBorder">
-            <span class="iconfont icon-fangdajing"></span> 
-            <input placeholder="你想买些什么" type="text" name="" id="">  
+            <span class="iconfont icon-fangdajing" @click="search"></span> 
+            <form action="./list" class="formSearch" autocomplete="off">
+              <input placeholder="你想买些什么" type="text"  value="" name="keywords" id="">  
+            </form> 
         </div>
         <span class="iconfont icon-xiaoxi"></span>
     </div>
@@ -68,9 +70,15 @@ import Footer from '@/components/Footer.vue'
 // import {getListinfo} from '@/api'
 import {listApi} from '@/api'
 export default {
+    created(){
+        console.log(this.$route.query.keywords)
+        // this.apiData.keywords = this.$route.params.query.id
+    },
     mounted(){
+        
         this.$nextTick(() => {
             this.initData()
+            
         })
     },
     components:{
@@ -78,6 +86,10 @@ export default {
     },
   data() {
     return {
+        apiData:{
+            keywords:'',
+            pagesize:1000,
+        },
       active: 1,   //底部标签选中
       list: [],
       loading: false,
@@ -86,12 +98,21 @@ export default {
     };
   },
   methods: {
+      search(){
+          document.querySelector(".formSearch").submit();
+      },
       //封装列表开始
     initData(){
-        listApi.getListinfo({pagesize:1000})
+        this.apiData.keywords = this.$route.query.keywords || ''
+        this.apiData.pagesize = 1000 || ''
+        listApi.getListinfo(this.apiData)
         .then(res=>{
             let htmlData = ''
             // console.log(res)
+            let keywords = this.$route.query.keywords
+            if(res.data.list.length < 1){
+                document.querySelector('.goodItem').innerHTML = `<figure style="width:100px;height:60px"><img width="100%" src="../assets/imgs/cry.jpg" alt=""></figure><h1 style="font-size:16px">没有找到与<b style="color:red;font-size:20px">${keywords}</b>相关的商品</h1>`
+            }else{
             res.data.list.forEach(function(item){
                 
                 htmlData +=`
@@ -110,7 +131,9 @@ export default {
             })
             
             document.querySelector('.goodItem').innerHTML = htmlData
+            }
         })
+        
     },
     //封装列表结束
     onLoad() {

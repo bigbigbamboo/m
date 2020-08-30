@@ -96,6 +96,7 @@ export default {
         //顶部
         onClickLeft() {
         Toast('返回');
+            this.$router.push({path:'/'})
         },
         onClickRight() {
             this.$router.push({path:'/sign'})

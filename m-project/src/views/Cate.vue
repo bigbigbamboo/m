@@ -39,7 +39,6 @@ import { goodsApi } from '@/api'
 export default {
     created(){
         this.initData()
-        this.showData()
     },
     components:{
         Footer
@@ -58,7 +57,9 @@ export default {
                     htmlData += `
                     <div>
                         <div>
-                            <p class="content">${item.cat_name}</p>
+                            <p class="content">
+                                <a href="${item.url ? item.url : '/list?keywords=' + item.keywords}">${item.cat_name}</a>
+                            </p>
                         </div>
                     </div>
                     `
@@ -118,7 +119,7 @@ export default {
 .content{ width: 100%; height: px2rem(50); line-height: px2rem(50);
           margin-bottom: px2rem(5); text-align: center; box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);}
  
-
+a{ color:grey }
  
 </style>
 

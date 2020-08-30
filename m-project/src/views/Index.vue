@@ -1,10 +1,13 @@
 <template>
-<div class="index">
+<div class="index" v-cloak>
     <!-- 顶部开始 -->
     <div class="header">
         <div class="topBorder">
-            <span class="iconfont icon-fangdajing"></span> 
-            <input placeholder="你想买些什么" type="text" name="" id="">  
+           
+            <span class="iconfont icon-fangdajing" @click="search"></span> 
+             <form action="./list" class="formSearch" autocomplete="off">
+              <input placeholder="你想买些什么" type="text"  value="" name="keywords" id="">  
+            </form>
         </div>
         <span class="iconfont icon-xiaoxi"></span>
     </div>
@@ -21,10 +24,10 @@
     </div>
     <!-- 导航结束 -->
     <!-- 分类开始 -->
-    <div class="cate">
-        <p class="pTag">
+    <div class="cate" >
+        <p class="pTag" @click="change('/list')">
             <img src="../assets/imgs/ico1.png" alt="">
-            <span>优惠活动</span>
+            <span>商品列表</span>
         </p>
         <p class="pTag">
             <img src="../assets/imgs/ico2.png" alt="">
@@ -153,7 +156,13 @@ import {listApi} from '@/api'
 // getListinfo
 
 export default {
+    
+     created(){
+        //  let t
+        //  t = setTimeout(function(){location.reload()},10)
+     },
     mounted(){
+        
         this.$nextTick(() => {
             this.initData('hot','.columnHot')
             this.initData('best','.columnBest')
@@ -187,6 +196,9 @@ export default {
     //        }
     //    },
       //接口请求数据开始
+      search(){
+          document.querySelector(".formSearch").submit();
+      },
       initData(type,className){
             listApi.getListinfo({type})
             .then(res=>{
@@ -208,7 +220,9 @@ export default {
                 `
                 })
                 document.querySelector(className).innerHTML = htmlData
+                
             })
+            
       },
       //接口请求数据结束
     onLoad() {
@@ -243,7 +257,9 @@ export default {
 <style lang='scss'>
 
 @import '@/assets/css/common.scss';
-
+    [v-cloak]{
+    display: none;
+}
 
 .index{
     width: 100%; height: 100%; background: #e9ecf0; display: flex; flex-direction: column;
@@ -252,7 +268,7 @@ export default {
         .topBorder{ 
             display: flex; border-radius: px2rem(30); flex: 1; align-items: center; padding: 0 px2rem(10);
              width: 290px; height: px2rem(32);background: #e9ecf0; box-sizing: border-box;
-            input{ width: px2rem(290); height: px2rem(32); border: none; background: none; padding: px2rem(10);}
+            input{ width: px2rem(290); height: px2rem(32); border: none; background: none!important; padding: px2rem(10);}
             .iconfont{font-size: px2rem(16)!important;}  margin-right: px2rem(10);
         }
         .iconfont{font-size: px2rem(20)!important; font-weight: 300!important;}

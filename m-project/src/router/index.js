@@ -27,18 +27,18 @@ const router = new VueRouter({
 
 // 全局前置守卫
 // 在Router实例上进行守卫
-// router.beforeEach((to, from, next) => {
-//   if (
-//     to.path == '/login' || to.path == '/' || to.path == '/list' || to.path == '/mine' || to.path == '/cate'
-//               || to.path == '/goods' || to.path == '/goods'
-//   ) {
-//     next()
-//   } else {
-//     let token = localStorage.getItem('token')
-//     if (!token) return next({path:'/login'})
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (
+    to.path == '/cart' 
+  ) {
+    let token = localStorage.getItem('token')
+    if (!token) return next({path:'/login'})
+    next()
+  } else {
+    
+    next()
+  }
+})
 
 export default router
 

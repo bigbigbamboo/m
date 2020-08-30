@@ -1,5 +1,15 @@
 <template>
 <div class="goods">
+    <div class="header">
+        <div class="topBorder">
+           
+            <span class="iconfont icon-fangdajing" @click="search"></span> 
+             <form action="./list" class="formSearch">
+              <input placeholder="你想买些什么" type="text"  value="" name="keywords" id="">  
+            </form>
+        </div>
+        <span class="iconfont icon-xiaoxi"></span>
+    </div>
     <!-- 图片开始 -->
     <div class="goodsContent">
         <div class="topImg">
@@ -44,13 +54,16 @@ export default {
         this.initData()
     },
     methods:{
+        search(){
+          document.querySelector(".formSearch").submit();
+      },
         addCart(){
             this.apiData.token = localStorage.getItem('token')
             goodsApi.postAddCar(this.apiData)
             .then(res=>{
                 console.log(res)
                 if(res.meta.state == 201){
-                    this.$router.push({path:'/cart'})
+                    this.$router.push({path:'/adress'})
                 }
             })
         },
@@ -101,6 +114,16 @@ export default {
 <style lang='scss'>
 @import '@/assets/css/common.scss';
 .goods{
+    .header{  display: flex; width: 100%; height: px2rem(50);  background: white;
+              align-items: center; padding: px2rem(20);box-sizing: border-box; 
+        .topBorder{ 
+            display: flex; border-radius: px2rem(30); flex: 1; align-items: center; padding: 0 px2rem(10);
+             width: 290px; height: px2rem(32);background: #e9ecf0; box-sizing: border-box;
+            input{ width: px2rem(290); height: px2rem(32); border: none; background: none!important; padding: px2rem(10);}
+            .iconfont{font-size: px2rem(16)!important;}  margin-right: px2rem(10);
+        }
+        .iconfont{font-size: px2rem(20)!important; font-weight: 300!important;}
+    }
     width:100%; height: 100%;background: #e9ecf0;  display: flex; flex-direction: column; overflow: hidden;
     .topIcon{ position: absolute;  
         p{ width: px2rem(30); height: px2rem(30); background: #666; border-radius: px2rem(50%);float: left; 
@@ -108,7 +131,7 @@ export default {
         }
         .pTag{ margin-left: px2rem(280); }
         .van-icon { font-size: px2rem(18); color: white; }
-        .topImg{ width: px2rem(377); height: px2rem(377); 
+        .topImg{ width: px2rem(377); height: px2rem(377); text-align: center;
             img{ width: 100%; height: 100%; }
         }
     }

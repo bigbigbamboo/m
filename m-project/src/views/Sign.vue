@@ -5,6 +5,7 @@
             title="注册"
             left-text=""
             left-arrow
+             @click-left="onClickLeft"
             />
     </div>
     <!-- 顶部开始 -->
@@ -108,6 +109,10 @@ export default {
     };
   },
     methods: {
+        onClickLeft() {
+        Toast('返回');
+            this.$router.push({path:'/'})
+        },
         // 验证码获取
         getCode(){
             userApi.postMessage(this.apiParams)
