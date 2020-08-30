@@ -11,10 +11,11 @@ Vue.use(VueRouter)
     { path: '/mine', component: () => import('../views/Mine.vue') },
     { path: '/cart', component: () => import('../views/Cars.vue') },
     { path: '/goods/:id', component: () => import('../views/Goods.vue') },
-    { path: '/order', component: () => import('../views/Order.vue') },
+    { path: '/adress', component: () => import('../views/Adress.vue') },
     { path: '/sign', component: () => import('../views/Sign.vue') },
     { path: '/list', component: () => import('../views/List.vue') },
     { path: '/pay', component: () => import('../views/Pay.vue') },
+    { path: '/had', component: () => import('../views/HadAddress.vue') },
 ]
 
 const router = new VueRouter({

@@ -9,24 +9,35 @@
         <span class="iconfont icon-xiaoxi"></span>
     </div>
     <!-- 顶部开始 -->
+    <div class="main">
     <!-- 导航开始 -->
     <div class="nav">
         <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-        <van-swipe-item>1</van-swipe-item>
-        <van-swipe-item>2</van-swipe-item>
-        <van-swipe-item>3</van-swipe-item>
-        <van-swipe-item>4</van-swipe-item>
+        <van-swipe-item><img src="../assets/imgs/lbu1.jpg" alt=""></van-swipe-item>
+        <van-swipe-item><img src="../assets/imgs/lbu2.jpg" alt=""></van-swipe-item>
+        <van-swipe-item><img src="../assets/imgs/lbu3.jpg" alt=""></van-swipe-item>
+        <van-swipe-item><img src="../assets/imgs/lbu4.jpg" alt=""></van-swipe-item>
         </van-swipe>
     </div>
     <!-- 导航结束 -->
     <!-- 分类开始 -->
     <div class="cate">
-        <van-grid>
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        </van-grid>
+        <p class="pTag">
+            <img src="../assets/imgs/ico1.png" alt="">
+            <span>优惠活动</span>
+        </p>
+        <p class="pTag">
+            <img src="../assets/imgs/ico2.png" alt="">
+            <span>积分商城</span>
+        </p>
+        <p class="pTag"  @click="change('/cart')">
+            <img src="../assets/imgs/ico3.png" alt="">
+            <span>购物车</span>
+        </p>
+        <p class="pTag">
+            <img src="../assets/imgs/ico4.png" alt="">
+            <span>红包</span>
+        </p>
     </div>
     <!-- 分类结束 -->
     <!-- 下拉菜单商品开始 -->
@@ -58,39 +69,6 @@
                                 <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
                             </div>
                         </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
                     </div>
             </div>
             <div class="spaceDivTag"></div>
@@ -104,39 +82,6 @@
                     </div>
                     
                     <div class="goodItem columnHot">
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
                         <div class="goodsCate">
                             <img src="../assets/imgs/1.jpg" alt="">
                             <div class="wordDiv">
@@ -183,28 +128,6 @@
                                 <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
                             </div>
                         </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
-                        <div class="goodsCate">
-                            <img src="../assets/imgs/1.jpg" alt="">
-                            <div class="wordDiv">
-                                <p class="word">
-                                    <span class='sp1'>KD876</span>
-                                    <span class='sp2'>￥1388.00</span>
-                                </p>
-                                <p class="spacePtag"></p>
-                                <p class='pTag'><i class='iTag1'>0</i><i class='iTag2'>人已购买</i></p>
-                            </div>
-                        </div>
                     </div>
             </div>
             <div class="spaceDivTag"></div>
@@ -212,6 +135,8 @@
 
         </van-list>
         </van-pull-refresh>
+    </div>
+
     </div>
     <!-- 下拉菜单结束 -->
     <div class="bottom">
@@ -233,7 +158,9 @@ export default {
             this.initData('hot','.columnHot')
             this.initData('best','.columnBest')
             this.initData('new','.columnNew')
+            // this.go()
         })
+        
         //商品进入详情页开始
         // document.querySelector('.goodsCate').onclick = function(){
 
@@ -254,6 +181,11 @@ export default {
   },
 //   <router-link to='/'>电影</router-link>
   methods: {
+    //    go(){
+    //        document.querySelector('#toCar').onclick=function(){
+    //            alert(1)
+    //        }
+    //    },
       //接口请求数据开始
       initData(type,className){
             listApi.getListinfo({type})
@@ -314,7 +246,7 @@ export default {
 
 
 .index{
-    width: 100%; height: 100%; background: #e9ecf0; 
+    width: 100%; height: 100%; background: #e9ecf0; display: flex; flex-direction: column;
     .header{  display: flex; width: 100%; height: px2rem(50);  background: white;
               align-items: center; padding: px2rem(20);box-sizing: border-box; 
         .topBorder{ 
@@ -325,21 +257,27 @@ export default {
         }
         .iconfont{font-size: px2rem(20)!important; font-weight: 300!important;}
     }
-    .nav{ width: 100%; height: px2rem(187);}
+    .nav{ width: 100%; height: px2rem(187);
+            img{width: 100%; height: 100%;}
+        }
     //轮播图开始
      .my-swipe .van-swipe-item 
      {
         color: #fff;
         font-size: 20px;
-        line-height: 187px;
+        // line-height: 187px;
         text-align: center;
-        background-color: #39a9ed;
      }
     //轮播图结束
+    .main{flex: 1; overflow-y: scroll;}
     //分类开始
     .cate
-    { 
-        width: 100%; height: px2rem(96); background: cadetblue;
+    { background: white; margin-bottom: px2rem(10);
+        width: 100%; height: px2rem(86); display: flex; justify-content: space-around; padding-top: px2rem(20);
+        .pTag{ width: px2rem(48); height: px2rem(44); text-align: center; 
+            img{ width: 100%; height: 100%; }
+            span{ font-size: px2rem(12) ; }
+        }
     }
     //分类结束
 
@@ -378,6 +316,8 @@ export default {
     
     //goods结束
 a{ color: #111; }
+
+
 //end
 }
 

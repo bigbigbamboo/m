@@ -28,6 +28,7 @@
     </div>
 <!-- 顶部结束 -->
     <!-- 我的订单开始 -->
+    <div class="main">
     <div class="order">
          <div class="order_l">
              <!-- <span style="margin-top:px2rem(10)"><van-icon name="balance-list-o" /></span> -->
@@ -115,6 +116,7 @@
         </div>
     </div>
     <!-- 收藏 地址 红包结束 -->
+    </div>
     <!-- 底部开始 -->
     <div>
         <Footer></Footer>
@@ -134,7 +136,7 @@ export default {
 
 <style lang='scss'  scoped>
 @import '@/assets/css/common.scss';
-.mine{ width:100%; height:100%; background: #e9ecf0; }
+.mine{ width:100%; height:100%; background: #e9ecf0; display: flex; flex-direction: column;}
 .header
 { 
     background: #fa800a; width:100%; height: px2rem(225); 
@@ -160,6 +162,7 @@ export default {
     content: '\F079';
     color: grey;
 }
+.main{ flex: 1; overflow-y: scroll; }
 .main_s{ margin-top: px2rem(10); }
 
 

@@ -14,9 +14,20 @@ function postAddCar (params) {
   }).then(res => res.data)
 }
 
-
+/**
+ * 商品分类
+ * @param {Object} params { userid, token }
+ */
+ function cateList (params) {
+  return request({
+    url: 'category/index.jsp',
+    method: 'get',
+    params
+  }).then(res => res.data)
+}
  
 
 export default {
-  postAddCar
+  postAddCar,
+  cateList
 }

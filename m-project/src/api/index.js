@@ -42,11 +42,13 @@ import listApi from './list'
 import userApi from './user'
 import goodsApi from './goods'
 import carsApi from './cars'
+import adressApi from './adress'
 
 export {
     listApi,
     userApi,
     goodsApi,
-    carsApi
+    carsApi,
+    adressApi
 }
  

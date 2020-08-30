@@ -149,7 +149,13 @@ export default {
                 console.log(res)
                 if(res.meta.state == 201){
                     Toast.success(res.meta.msg);
+                    this.$store.dispatch('pay/setUserinfo',{
+                                    order_sn: res.data.order_sn,
+                                    total_price:res.data.total_price,
+                                })
                     this.$router.push({path:'/pay'})
+                }else{
+                    Toast.fail(res.meta.msg);
                 }
             })
         },
@@ -212,7 +218,7 @@ export default {
     }
 .cartInput{ width:30px; text-align:center }
 
-.main{ flex: 1; overflow: scroll; }
+.main{ flex: 1; overflow-y: scroll; }
 .dd{ margin: px2rem(10); }
 
 

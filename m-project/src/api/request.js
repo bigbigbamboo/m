@@ -15,7 +15,7 @@ baseURL: isDev ? 'http://kg.zhaodashen.cn/v1/' : 'http://xxx.com/api'
 request.interceptors.request.use((config) => {
     // 动画、请求token等
 config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-console.log('正在加载....')
+// console.log('正在加载....')
 return config
 }, (error) => {
 	return Promise.reject(error)
@@ -24,7 +24,7 @@ return config
 // 响应拦截器 --- 所有请求的相应先到此处
 request.interceptors.response.use((response) => {
 // 动画隐藏、错误统一处理等
-console.log('加载完毕')
+// console.log('加载完毕')
 return response
 }, (error) => {
 	return Promise.reject(error)
